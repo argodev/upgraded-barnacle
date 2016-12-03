@@ -87,3 +87,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+
+# web stuff
+site/static/bower_components/

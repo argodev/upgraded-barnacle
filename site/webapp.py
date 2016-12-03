@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, Response
+from flask import Flask, jsonify, Response, render_template
 app = Flask(__name__)
 
 
@@ -55,8 +55,8 @@ def get_db_data():
     return my_db
 
 @app.route('/')
-def hello_world():
-    return 'Hello World'
+def index():
+    return render_template('index.html')
 
 @app.route('/api/sampledb', methods = ['GET'])
 def sample_db_get():
