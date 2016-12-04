@@ -1,0 +1,93 @@
+<div class="animated fadeIn" ng-controller="LogCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-md-6">
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" id="username2" name="username2" class="form-control" ng-model="searchText" placeholder="Filter">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> Sample Data Screen
+                </div>
+                <div class="card-block">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <a href="#" ng-click="sortType = 'Title'; sortReverse = !sortReverse">
+                                        Title
+                                        <span ng-show="sortType == 'Title' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'Title' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </th>
+                                <th>
+                                    <a href="#" ng-click="sortType = 'SessionStartTime'; sortReverse = !sortReverse">
+                                        Start Time
+                                        <span ng-show="sortType == 'SessionStartTime' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'SessionStartTime' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </th>
+                                <th>
+                                    <a href="#" ng-click="sortType = 'Room'; sortReverse = !sortReverse">
+                                        Room
+                                        <span ng-show="sortType == 'Room' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'Room' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </th>
+                                <th>
+                                    <a href="#" ng-click="sortType = 'SessionType'; sortReverse = !sortReverse">
+                                        Type
+                                        <span ng-show="sortType == 'SessionType' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'SessionType' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </th>
+                                <th>
+                                    <a href="#" ng-click="sortType = 'Category'; sortReverse = !sortReverse">
+                                        Category
+                                        <span ng-show="sortType == 'Category' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'Category' && sortReverse" class="fa fa-caret-up"></span>
+                                    </a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat='rec in data | filter:searchText | orderBy:sortType:sortReverse'>
+                                <td>{{ rec.Title }}</td>
+                                <td>{{ rec.SessionStartTime }}</td>
+                                <td>{{ rec.Room }}</td>
+                                <td>{{ rec.SessionType }}</td>
+                                <td>{{ rec.Category }}</td>
+                                <!--<td>
+                                    <span class="tag tag-success">Active</span>
+                                </td>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Prev</a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
