@@ -61,7 +61,7 @@
                         <tbody>
                             <tr ng-repeat='rec in data | filter:searchText | orderBy:sortType:sortReverse'>
                                 <td>{{ rec.Title }}</td>
-                                <td>{{ rec.SessionStartTime }}</td>
+                                <td>{{ rec.SessionStartTime | date:'yyyy-MM-dd HH:mm:ss' }}</td>
                                 <td>{{ rec.Room }}</td>
                                 <td>{{ rec.SessionType }}</td>
                                 <td>{{ rec.Category }}</td>
