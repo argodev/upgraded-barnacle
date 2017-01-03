@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, Response, render_template
+from flask import Flask, jsonify, Response, render_template, request
 app = Flask(__name__)
 
 
@@ -65,7 +65,14 @@ def sample_db_get():
     res.status_code = 200
     return res
 
+@app.route('/api/radio/<radioid>', methods=['GET', 'POST'])
+def set_radio_settings(radioid):
+    content = request.get_json()
 
+    # now let's get the updated settings
+    res = jsonify(content)
+    res.status_code = 202
+    return res
 
 
 if __name__ == '__main__':
